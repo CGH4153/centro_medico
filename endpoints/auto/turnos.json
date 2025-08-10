@@ -1,0 +1,70 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'turnos'",
+        "route": "/turnos",
+        "method": "GET",
+        "sql": "SELECT * FROM turnos",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'turnos' by its primary key",
+        "route": "/turnos/$id",
+        "method": "GET",
+        "sql": "SELECT * FROM turnos WHERE id = $id",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'turnos'",
+        "route": "/turnos",
+        "method": "POST",
+        "sql": "INSERT INTO turnos (fecha_comienzo, hora_inicio, hora_fin, fecha_fin, dias_ap, vacaciones, id_paciente) VALUES ($fecha_comienzo, $hora_inicio, $hora_fin, $fecha_fin, $dias_ap, $vacaciones, $id_paciente)",
+        "request_body_params": [
+            "fecha_comienzo",
+            "hora_inicio",
+            "hora_fin",
+            "fecha_fin",
+            "dias_ap",
+            "vacaciones",
+            "id_paciente"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'turnos' by its primary key",
+        "route": "/turnos/$id",
+        "method": "PUT",
+        "sql": "UPDATE turnos SET fecha_comienzo = $fecha_comienzo, hora_inicio = $hora_inicio, hora_fin = $hora_fin, fecha_fin = $fecha_fin, dias_ap = $dias_ap, vacaciones = $vacaciones, id_paciente = $id_paciente WHERE id = $id",
+        "request_body_params": [
+            "fecha_comienzo",
+            "hora_inicio",
+            "hora_fin",
+            "fecha_fin",
+            "dias_ap",
+            "vacaciones",
+            "id_paciente"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'turnos' by its primary key",
+        "route": "/turnos/$id",
+        "method": "DELETE",
+        "sql": "DELETE FROM turnos WHERE id = $id",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

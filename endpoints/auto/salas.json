@@ -1,0 +1,64 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'salas'",
+        "route": "/salas",
+        "method": "GET",
+        "sql": "SELECT * FROM salas",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'salas' by its primary key",
+        "route": "/salas/$id",
+        "method": "GET",
+        "sql": "SELECT * FROM salas WHERE id = $id",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'salas'",
+        "route": "/salas",
+        "method": "POST",
+        "sql": "INSERT INTO salas (edificio, planta, puerta, ocupacion) VALUES ($edificio, $planta, $puerta, $ocupacion)",
+        "request_body_params": [
+            "edificio",
+            "planta",
+            "puerta",
+            "ocupacion"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'salas' by its primary key",
+        "route": "/salas/$id",
+        "method": "PUT",
+        "sql": "UPDATE salas SET edificio = $edificio, planta = $planta, puerta = $puerta, ocupacion = $ocupacion WHERE id = $id",
+        "request_body_params": [
+            "edificio",
+            "planta",
+            "puerta",
+            "ocupacion"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'salas' by its primary key",
+        "route": "/salas/$id",
+        "method": "DELETE",
+        "sql": "DELETE FROM salas WHERE id = $id",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

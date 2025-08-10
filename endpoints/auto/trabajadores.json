@@ -1,0 +1,12 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'trabajadores'",
+        "route": "/trabajadores",
+        "method": "GET",
+        "sql": "SELECT * FROM trabajadores",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

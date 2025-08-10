@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabecera</title>
+    <link rel="icon" href="\images\Logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="js/utils/include.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+
+    <script type="module" src="js/users.js"></script>
+</head>
+<body>
+    <div class="header header-mb-lg-5">
+        <h1 id="title">
+            <img src="\images\Logo.png" alt="Bootstrap" width="50" height="50">
+            Centro Médico
+        </h1>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="navbar-title">
+                <img src="\images\Logo.png" alt="Bootstrap" width="30" height="30">
+                Centro Médico
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" id="navbar-index">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown" id="navbar-services">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-heartbeat" aria-hidden="true"></i> 
+                            Servicios
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Consultas generales
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-consultas-generales">
+                                    <li><a class="dropdown-item" href="medicina_general.html">Medicina general</a></li>
+                                    <li><a class="dropdown-item" href="pediatria.html">Pediatría</a></li>
+                                    <li><a class="dropdown-item" href="ginecologia.html">Ginecología y obstetricia</a></li>
+                                    <li><a class="dropdown-item" href="medicina_interna.html">Medicina interna</a></li>
+                                    <li><a class="dropdown-item" href="geriatría.html">Geriatría</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Especialidades médicas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-especialidades-medicas">
+                                    <li><a class="dropdown-item" href="dermatologia.html">Dermatología</a></li>
+                                    <li><a class="dropdown-item" href="cardiologia.html">Cardiología</a></li>
+                                    <li><a class="dropdown-item" href="traumatologia_ortopedia.html">Traumatología y ortopedia</a></li>
+                                    <li><a class="dropdown-item" href="alergologia.html">Alergología</a></li>
+                                    <li><a class="dropdown-item" href="endocrinologia.html">Endocrinología</a></li>
+                                    <li><a class="dropdown-item" href="neumologia.html">Neumología</a></li>
+                                    <li><a class="dropdown-item" href="orl.html">Otorrinolaringología</a></li>
+                                    <li><a class="dropdown-item" href="oftalmologia.html">Oftalmología</a></li>
+                                    <li><a class="dropdown-item" href="urologia.html">Urología</a></li>
+                                    <li><a class="dropdown-item" href="reumatologia.html">Reumatología</a></li>
+                                    <li><a class="dropdown-item" href="neurologia.html">Neurología</a></li>
+                                    <li><a class="dropdown-item" href="psiquiatria.html">Psiquiatría</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Salud y bienestar
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-salud-bienestar">
+                                    <li><a class="dropdown-item" href="psicologia.html">Psicología clínica</a></li>
+                                    <li><a class="dropdown-item" href="psidopedagogia.html">Psicopedagogía</a></li>
+                                    <li><a class="dropdown-item" href="terapia.html">Terapia familiar / de pareja</a></li>
+                                    <li><a class="dropdown-item" href="estres.html">Coaching y gestión del estrés</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Rehabilitacion y fisioterapia
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-rehabilitacion-fisioterapia">
+                                    <li><a class="dropdown-item" href="fisioterapia.html">Fisioterapia general</a></li>
+                                    <li><a class="dropdown-item" href="rehabilitacion.html">Rehabilitación postoperatoria</a></li>
+                                    <li><a class="dropdown-item" href="reeducacion.html">Reeducacion postural</a></li>
+                                    <li><a class="dropdown-item" href="osteopatia.html">Osteopatía</a></li>
+                                    <li><a class="dropdown-item" href="pilates.html">Pilates terapéutico</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Diagnóstico y pruebas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-diagnostico-pruebas">
+                                    <li><a class="dropdown-item" href="analisis.html">Análisis clínicos</a></li>
+                                    <li><a class="dropdown-item" href="pruebas.html">Pruebas</a></li>
+                                    <li><a class="dropdown-item" href="ecg.html">Electrocardiogramas</a></li>
+                                    <li><a class="dropdown-item" href="ecografias.html">Ecografías</a></li>
+                                    <li><a class="dropdown-item" href="radiografias.html">Radiografías</a></li>
+                                    <li><a class="dropdown-item" href="espirometrias.html">Espirometrías</a></li>
+                                    <li><a class="dropdown-item" href="alergias.html">Test de intolerancias / alergias</a></li>
+                                    <li><a class="dropdown-item" href="chequeos.html">Chequeos</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Atención rápida
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-atencion-rapida">
+                                    <li><a class="dropdown-item" href="express.html">Consultas express</a></li>
+                                    <li><a class="dropdown-item" href="segunda_opinion.html">Segunda opinión médica</a></li>
+                                    <li><a class="dropdown-item" href="telemedicina.html">Telemedicina (videoconsulta)</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="navbar-consultas-generales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Otros servicios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbar-otros-servicios">
+                                    <li><a class="dropdown-item" href="enfermeria.html">Enfermería</a></li>
+                                    <li><a class="dropdown-item" href="vacunacion.html">Vacunación</a></li>
+                                    <li><a class="dropdown-item" href="reconocimientos.html">Reconocimientos</a></li>
+                                    <li><a class="dropdown-item" href="certificados.html">Certificados</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="information.html" id="navbar-information">
+                            <i class="fa fa-user-md" aria-hidden="true"></i>
+                            Sobre nosotros
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="crear_cita.html" id="navbar-crear_cita">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                            Pedir cita
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="reviews.html" id="navbar-reviews">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            Opiniones
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" id="navbar-contact">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html" id="navbar-help">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            Ayuda
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="navbar-login">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            Iniciar sesión
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.html" id="navbar-user">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Mi salud
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

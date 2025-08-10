@@ -1,0 +1,69 @@
+form.form {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+    /* Centrar el formulario */
+
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+div.form-group {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.form-submit {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.container {
+    position: relative;
+}
+
+button.btn {
+    background-color: #04335a;
+    color: white;
+}
+
+button.btn:hover {
+    color: #2dac7c !important;
+}
+
+form.register {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+    /* Centrar el formulario */
+
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+span.required {
+    color: red;
+}
+
+legend {
+    font-style: italic;
+    font-family: 'Merriweather', serif;
+}
+
+a.signin {
+    color: #04335a;
+}
+
+a.signin:hover {
+    color: #2dac7c !important;
+}

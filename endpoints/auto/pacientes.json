@@ -1,0 +1,74 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'pacientes'",
+        "route": "/pacientes",
+        "method": "GET",
+        "sql": "SELECT * FROM pacientes",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'pacientes' by its primary key",
+        "route": "/pacientes/$id",
+        "method": "GET",
+        "sql": "SELECT * FROM pacientes WHERE id = $id",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'pacientes'",
+        "route": "/pacientes",
+        "method": "POST",
+        "sql": "INSERT INTO pacientes (nombre, apellido1, apellido2, fecha_nacimiento, dni, telefono, correo, contrasena, tipo_trabajador) VALUES ($nombre, $apellido1, $apellido2, $fecha_nacimiento, $dni, $telefono, $correo, $contrasena, $tipo_trabajador)",
+        "request_body_params": [
+            "nombre",
+            "apellido1",
+            "apellido2",
+            "fecha_nacimiento",
+            "dni",
+            "telefono",
+            "correo",
+            "contrasena",
+            "tipo_trabajador"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'pacientes' by its primary key",
+        "route": "/pacientes/$id",
+        "method": "PUT",
+        "sql": "UPDATE pacientes SET nombre = $nombre, apellido1 = $apellido1, apellido2 = $apellido2, fecha_nacimiento = $fecha_nacimiento, dni = $dni, telefono = $telefono, correo = $correo, contrasena = $contrasena, tipo_trabajador = $tipo_trabajador WHERE id = $id",
+        "request_body_params": [
+            "nombre",
+            "apellido1",
+            "apellido2",
+            "fecha_nacimiento",
+            "dni",
+            "telefono",
+            "correo",
+            "contrasena",
+            "tipo_trabajador"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'pacientes' by its primary key",
+        "route": "/pacientes/$id",
+        "method": "DELETE",
+        "sql": "DELETE FROM pacientes WHERE id = $id",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

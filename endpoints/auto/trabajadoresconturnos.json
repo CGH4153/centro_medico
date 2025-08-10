@@ -1,0 +1,12 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'trabajadoresconturnos'",
+        "route": "/trabajadoresconturnos",
+        "method": "GET",
+        "sql": "SELECT * FROM trabajadoresconturnos",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

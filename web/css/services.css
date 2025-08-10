@@ -1,0 +1,35 @@
+p {
+    font-family: serif;
+    text-align: justify;
+}
+
+li {
+    font-family: serif;
+    text-align: justify;
+}
+
+h1 {
+    font-family: serif;
+    font-style: italic;
+}
+
+h3 {
+    font-family: serif;
+    color:cornflowerblue
+}
+
+a.emphasis {
+    color: cornflowerblue;
+    text-decoration: none;
+    font-style: oblique;
+}
+
+a.emphasis:hover {
+    color: #2dac7c !important;
+    text-decoration: none;
+}
+
+div.container {
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
