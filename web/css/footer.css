@@ -1,0 +1,54 @@
+div.container-fluid {
+    background-color: #04335a;
+}
+
+#title {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    color: aliceblue;
+}
+
+div.col-md {
+    margin-top: 10px;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+    color: aliceblue;
+}
+
+a {
+    color: cornflowerblue;
+}
+
+i.fa-map-marker {
+    color: red;
+}
+
+i.fa-whatsapp {
+    color: #2dac7c;
+}
+
+i.fa-envelope-o {
+    color: blue;
+}
+
+i.fa-phone {
+    color: gray;
+}
+
+i.fa-youtube-play {
+    color: red;
+}
+
+i.fa-twitter-square {
+    color: cornflowerblue;
+}
+
+i.fa-instagram {
+    color: deeppink;
+}
+
+i.fa-facebook-square {
+    color: blue;
+}

@@ -16,6 +16,10 @@ function hideHeaderOptions(){
     let headerInformation = document.getElementById("navbar-information");
     let headerServices = document.getElementById("navbar-services");
     let headerIndex = document.getElementById("navbar-index");
+    let headerCalendar = document.getElementById("navbar-calendar");
+    let headerClients = document.getElementById("navbar-clients");
+    let headerStock = document.getElementById("navbar-stock");
+
 
     if(sessionManager.isLogged()){
         const loggedUser = sessionManager.getLoggedUser();
@@ -34,6 +38,9 @@ function hideHeaderOptions(){
         } else {
             // Es paciente
             headerLogin.style.display = "none";
+            headerCalendar.style.display = "none";
+            headerClients.style.display = "none";
+            headerStock.style.display = "none";
         }
     } else {
         // No logueado
