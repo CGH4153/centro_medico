@@ -1,0 +1,62 @@
+#calendar {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Cabecera de los días de la semana */
+.fc-col-header-cell {
+    background-color: #04335a !important; /* Fondo azul */
+    color: black !important; /* Letras negras */
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+}
+
+.fc-col-header-cell-cushion {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.fc-col-header-cell-cushion:hover {
+    color:#2dac7c;
+}
+
+/* Quitar subrayado de los números de día */
+.fc-daygrid-day-number {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.fc-daygrid-day-number:hover {
+    color: #2dac7c;
+}
+
+/* Cambiar estilo de los botones de navegación */
+.fc-button {
+    background-color: #2dac7c !important; /* Verde */
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    transition: background-color 0.3s ease;
+}
+.fc-button:hover {
+    background-color: #218838 !important; /* Verde más oscuro */
+}
+
+/* Botón Hoy en amarillo */
+.fc-today-button {
+    background-color: #ffc107 !important;
+    color: #333 !important;
+    font-weight: bold;
+    border: none !important;
+}
+.fc-today-button:hover {
+    background-color: #e0a800 !important;
+}
+
+/* Fondo del día actual */
+.fc-day-today {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+}
