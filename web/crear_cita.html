@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cita</title>
+
+    <link rel="icon" href="\images\Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="js/utils/include.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+
+    <script type="module" src="js/users.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div id="errors"></div>
+
+    <div class="container">
+        <form class="form col-md-4" id="form">
+            <div class="form-group">
+                <label for="especialidad-input">Día: </label>
+                <select name="especialidad" required>
+                    <option value="">-- Selecciona --</option>
+                    <option>Medicina general</option>
+                    <option>Pediatría</option>
+                    <option>Dermatología</option>
+                    <option>Cardiología</option>
+                    <option>Fisioterapia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date-input">Día: </label>
+                <input type="datetime-local" class="form-control" id="date-input" name="dia" required>
+            </div>
+
+            <div class="form-group">
+                <label for="triage-input">Triage: </label>
+                <input type="number" class="form-control" id="triage-input" name="triage" placeholder="Triage" max="5" min="1" pattern="[0-5]{1}">
+            </div>
+
+            <div class="form-group">
+                <label for="motivo-input">Motivo: </label>
+                <textarea type="text" class="form-control" id="motivo-input" name="motivo" placeholder="Explique brevemente qué problema tiene. Esto ayudará al médico a facilitarle un mejor diagnóstico."></textarea>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn">Crear cita</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        include("header.html", "#header");
+    </script>
+</body>
+</html>

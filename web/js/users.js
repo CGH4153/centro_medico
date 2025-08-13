@@ -46,6 +46,9 @@ function hideHeaderOptions(){
         // No logueado
         headerUser.style.display = "none";
         headerCitas.style.display = "none";
+        headerCalendar.style.display = "none";
+        headerClients.style.display = "none";
+        headerStock.style.display = "none";
     }
 }
 
