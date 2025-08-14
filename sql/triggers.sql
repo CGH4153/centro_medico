@@ -27,3 +27,34 @@ END;
 //
 
 DELIMITER ;
+
+DELIMITER //
+
+CREATE TRIGGER especialidad_doctor -- Trigger para que un doctor tenga asignada una especialidad, no puede ser nula
+AFTER INSERT ON pacientes
+FOR EACH ROW
+BEGIN
+	IF NEW.tipo_trabajador = 'Doctor' AND NEW.tipo_especialidad = NULL THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Un doctor no puede no estar especializado';
+	END IF;
+END;
+//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE TRIGGER especialidad_nula -- Trigger para que todos los usuarios excepto doctores tengan especialidad nula
+AFTER INSERT ON pacientes
+FOR EACH ROW
+BEGIN
+	-- Si no es doctor y tiene especialidad, bloquear
+    IF NEW.tipo_trabajador <> 'Doctor' AND NEW.tipo_especialidad IS NOT NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Solo los doctores pueden tener especialidad';
+    END IF;
+END;
+//
+
+DELIMITER ;

@@ -17,7 +17,8 @@ CREATE TABLE Pacientes (
 	telefono INT NOT NULL,
 	correo VARCHAR(255),
 	contrasena VARCHAR(255) NOT NULL UNIQUE,
-	tipo_trabajador ENUM('Médico', 'Doctor', 'Enfermero', 'Administrativo', 'Mantenimiento') DEFAULT NULL
+	tipo_trabajador ENUM('Médico', 'Doctor', 'Enfermero', 'Administrativo', 'Mantenimiento') DEFAULT NULL,
+	tipo_especialidad ENUM('Pediatría', 'Ginecología', 'Obstetricia', 'Medicina interna', 'Geriatría', 'Dermatología', 'Cardiología', 'Traumatología', 'Ortopedia', 'Alergología', 'Endocrinología', 'Neumología', 'Otorrinolaringología', 'Oftalmología', 'Urología', 'Reumatología', 'Neurología', 'Psiquiatría', 'Psicología', 'Psicopedagogía', 'Terapia', 'Coaching', 'Fisioterapia', 'Osteopatía') DEFAULT NULL
 	-- La edad del usuario se calcula aparte
 	-- Los trabajadores se obtienen en una vista diferente, pero tienen que registrarse como pacientes en esta tabla
 );

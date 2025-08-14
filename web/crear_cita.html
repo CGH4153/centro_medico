@@ -17,6 +17,7 @@
     <script src="js/libs/axios.min.js"></script>
 
     <script type="module" src="js/users.js"></script>
+    <script type="module" src="js/cita.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -26,25 +27,69 @@
     <div class="container">
         <form class="form col-md-4" id="form">
             <div class="form-group">
-                <label for="especialidad-input">Día: </label>
-                <select name="especialidad" required>
-                    <option value="">-- Selecciona --</option>
-                    <option>Medicina general</option>
-                    <option>Pediatría</option>
-                    <option>Dermatología</option>
-                    <option>Cardiología</option>
-                    <option>Fisioterapia</option>
+                <label for="especialidad-input">Especialidad: </label>
+                <select id="especialidad" name="especialidad" required>
+                    <option value="Medicina general">Medicina general</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Ginecología">Ginecología</option>
+                    <option value="Obstetricia">Obstetricia</option>
+                    <option value="Medicina interna">Medicina interna</option>
+                    <option value="Geriatría">Geriatría</option>
+                    <option value="Dermatología">Dermatología</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Traumatología">Traumatología</option>
+                    <option value="Ortopedia">Ortopedia</option>
+                    <option value="Alergología">Alergología</option>
+                    <option value="Endocrinología">Endocrinología</option>
+                    <option value="Neumología">Neumología</option>
+                    <option value="Otorrinolaringología">Otorrinolaringología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                    <option value="Urología">Urología</option>
+                    <option value="Reumatología">Reumatología</option>
+                    <option value="Neurología">Neurología</option>
+                    <option value="Psiquiatría">Psiquiatría</option>
+                    <option value="Psicología">Psicología</option>
+                    <option value="Psicopedagogía">Psicopedagogía</option>
+                    <option value="Terapia">Terapia</option>
+                    <option value="Coaching">Coaching</option>
+                    <option value="Fisioterapia">Fisioterapia</option>
+                    <option value="Osteopatía">Osteopatía</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="date-input">Día: </label>
+                <label for="medico-input">Médico preferente: </label>
+                <select id="medico" name="medico">
+                    <option value="">-- Seleccione médico --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date-input">Fecha y hora: </label>
                 <input type="datetime-local" class="form-control" id="date-input" name="dia" required>
             </div>
 
             <div class="form-group">
                 <label for="triage-input">Triage: </label>
-                <input type="number" class="form-control" id="triage-input" name="triage" placeholder="Triage" max="5" min="1" pattern="[0-5]{1}">
+                <select name="triage" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="1">1 - Emergencia vital inmediata</option>
+                    <option value="2">2 - Urgente en pocas horas</option>
+                    <option value="3">3 - Atención necesaria en el día</option>
+                    <option value="4">4 - Consulta programable en días</option>
+                    <option value="5">5 - Revisión o trámite sin urgencia</option>
+                </select>
+                <p>Selecciona el número que mejor describa tu situación</p>
+            </div>
+
+            <div class="form-group">
+                <label>Modalidad de cita: </label>
+                <select name="modalidad" required>
+                    <option value="presencial">Presencial</option>
+                    <option value="express">Consulta express</option>
+                    <option value="segunda_opinion">Segunda opinión médica</option>
+                    <option value="online">Videoconsulta</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -53,7 +98,7 @@
             </div>
 
             <div class="form-submit">
-                <button type="submit" class="btn">Crear cita</button>
+                <button type="submit" class="btn">Solicitar cita</button>
             </div>
         </form>
     </div>

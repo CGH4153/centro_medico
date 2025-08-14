@@ -37,8 +37,10 @@ SELECT
 	p.id as id,
 	p.nombre as nombre,
 	p.apellido1 as apellido,
-	p.correo as correo
+	p.correo as correo,
+	p.tipo_trabajador as tipo,
+	p.tipo_especialidad as especialidad
 FROM Pacientes p
 WHERE tipo_trabajador IS NOT NULL
-GROUP BY id, nombre, apellido, correo
+GROUP BY id, nombre, apellido, correo, tipo, especialidad
 ORDER BY p.id ASC;
