@@ -1,0 +1,21 @@
+#calendario button, #horas button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dia-disponible {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.hora-disponible {
+  background-color: #2196F3;
+  color: white;
+}
+
+.dia-disponible:hover, .hora-disponible:hover {
+  opacity: 0.8;
+}
