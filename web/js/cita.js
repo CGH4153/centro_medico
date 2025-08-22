@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     calendar.render();
 
     // Función para generar todos los eventos de los turnos
+    function normalizarHora(hora) {
+        if (!hora) return null;
+        let partes = hora.split(":"); // ej: ["0", "00", "00"]
+        let hh = partes[0].padStart(2, "0"); // "0" → "00"
+        let mm = partes[1] || "00";          // "00"
+        return `${hh}:${mm}`;                // "00:00"
+    }
+
     function generarEventosTurnos(turnos) {
         let eventos = [];
 
@@ -30,13 +38,36 @@ document.addEventListener("DOMContentLoaded", async function() {
             let fechaInicio = new Date(t.fecha_comienzo);
             let fechaFin = new Date(t.fecha_fin);
 
+            if (isNaN(fechaInicio) || isNaN(fechaFin)) {
+                console.warn("Turno con fechas inválidas:", t);
+                return;
+            }
+
             for (let d = new Date(fechaInicio); d <= fechaFin; d.setDate(d.getDate() + 1)) {
                 let dia = d.toISOString().split("T")[0]; // YYYY-MM-DD
-                const start = new Date(dia);
-                start.setHours(...t.hora_inicio.split(":"));
 
-                const end = new Date(dia);
-                end.setHours(...t.hora_fin.split(":"));
+                let horaInicio = normalizarHora(t.hora_inicio);
+                let horaFin = normalizarHora(t.hora_fin);
+
+                if (!horaInicio || !horaFin) {
+                    console.warn("Turno sin horas válidas:", t);
+                    continue;
+                }
+
+                let start = new Date(`${dia}T${horaInicio}`);
+                let end;
+
+                if (horaFin === "00:00") {
+                    // 👇 si hora_fin = 00:00 lo pasamos a 23:59 del mismo día
+                    end = new Date(`${dia}T23:59`);
+                } else {
+                    end = new Date(`${dia}T${horaFin}`);
+                }
+
+                if (isNaN(start) || isNaN(end)) {
+                    console.warn("Fecha/hora inválida en turno:", t);
+                    continue;
+                }
 
                 eventos.push({
                     start: start.toISOString(),
@@ -93,22 +124,42 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
     });
 
-    // Al cambiar el médico → cargar turnos en el calendario
+    // Al cambiar el médico → cargar turnos en el calendario => No lo hace, solo muestra en verde un turno(00:00 a 12:00)
     medicoSelect.addEventListener("change", async function () {
         const medicoId = this.value;
+
+        calendar.removeAllEvents();
+        calendar.getEventSources().forEach(src => src.remove()); // 🔑 limpiar bien
 
         if (medicoId) {
             try {
                 const turnosMedico = await turnosAPI_auto.getAll({ medicoId });
                 const eventosTurnos = generarEventosTurnos(turnosMedico);
-
-                calendar.removeAllEvents(); // limpia eventos anteriores
                 calendar.addEventSource(eventosTurnos);
             } catch (err) {
                 console.error("Error al cargar turnos:", err);
             }
-        } else {
-            calendar.removeAllEvents(); // si quita el médico, queda vacío
         }
     });
+
+    // 🔑 --- NUEVO: seleccionar fecha/hora pasada por query string ---
+    const params = new URLSearchParams(window.location.search);
+    const fechaParam = params.get("fecha"); // ej: 2025-08-22T06:00:00+02:00
+    if (fechaParam) {
+        const fechaSeleccionada = new Date(fechaParam);
+        if (!isNaN(fechaSeleccionada)) {
+            calendar.gotoDate(fechaSeleccionada);
+
+            // marcar el slot de 1h desde la fecha pasada
+            const endSeleccionada = new Date(fechaSeleccionada.getTime() + 60 * 60 * 1000);
+
+            calendar.addEvent({
+                start: fechaSeleccionada.toISOString(),
+                end: endSeleccionada.toISOString(),
+                title: "Nueva cita",
+                backgroundColor: "blue",
+                borderColor: "darkblue"
+            });
+        }
+    }
 });
